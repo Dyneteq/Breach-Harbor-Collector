@@ -1,0 +1,3 @@
+services:
+  ssh:
+    enabled: "invalid"  # This value should be a boolean, not a string.

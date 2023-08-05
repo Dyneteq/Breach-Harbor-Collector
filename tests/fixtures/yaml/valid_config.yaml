@@ -1,0 +1,7 @@
+services:
+  ssh:
+    enabled: false
+    port: 22
+  http:
+    enabled: true
+    port: 80
