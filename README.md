@@ -1,5 +1,5 @@
 # BREACH :: HARBOR Collector
-[![Python Unit Tests](https://github.com/Dyneteq/breach_harbor_collector/actions/workflows/main.yml/badge.svg)](https://github.com/Dyneteq/breach_harbor_collector/actions/workflows/main.yml)
+[![Python Unit Tests](https://github.com/Dyneteq/Breach-Harbor-Collector/actions/workflows/main.yml/badge.svg)](https://github.com/Dyneteq/Breach-Harbor-Collector/actions/workflows/main.yml)
 
 ## About
 
