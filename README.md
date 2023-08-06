@@ -1,9 +1,9 @@
-# BREACH :: HARBOR [vessel]
-[![Python Unit Tests](https://github.com/Dyneteq/breach_harbor_vessel/actions/workflows/main.yml/badge.svg)](https://github.com/Dyneteq/breach_harbor_vessel/actions/workflows/main.yml)
+# BREACH :: HARBOR Collector
+[![Python Unit Tests](https://github.com/Dyneteq/breach_harbor_collector/actions/workflows/main.yml/badge.svg)](https://github.com/Dyneteq/breach_harbor_collector/actions/workflows/main.yml)
 
 ## About
 
-BREACH::HARBOR vessel is a service that collects data from inbound attacks, logs them and sends them over to the BREACH::HARBOR Core API.
+BREACH::HARBOR collector is a service that collects data from inbound attacks, logs them and sends them over to the BREACH::HARBOR Core API.
 
 The service can be ran autonomously for research and monitoring purposes without any connection to the separate Core API service.
 
@@ -16,14 +16,14 @@ The service can be ran autonomously for research and monitoring purposes without
 Build:
 
 ```bash
-docker build -t bh-vessel .
+docker build -t bh-collector .
 ```
 
 Start:
 
 ```bash
 # We need to mount a volume with the .env file in order to reftect the changes
-docker run -p 80:8080 -p 22:2222 -v "$(pwd)/.env:/app/.env" bh-vessel
+docker run -p 80:8080 -p 22:2222 -v "$(pwd)/.env:/app/.env" bh-collector
 ```
 
 ## Development
@@ -66,15 +66,15 @@ Run simply as your `$user` with ports over 1024 or with sudo for :80 access (not
 sudo `which python3` start.py
 ```
 
-## How to dock a new vessel to the BREACH::HARBOR Core API
+## How to dock a new collector to the BREACH::HARBOR Core API
 
-- Generate a new token on the _Add new vessel page_
-- Clone this repository on the vessel
+- Generate a new token on the _Add new collector page_
+- Clone this repository on the collector
 - Create or copy the .env file and fill in the variable values
 - Run with docker or locally with python
-- Verify the connection by checking the systemd status and the cloud vessel page
+- Verify the connection by checking the systemd status and the cloud collector page
   
-## Services that are (or will) supported by each vessel
+## Services that are (or will) supported by each collector
 
 - [ ] [20] FTP (File Transfer Protocol - Data)
 - [ ] [21] FTP (File Transfer Protocol - Control)
