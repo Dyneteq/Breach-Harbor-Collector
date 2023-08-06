@@ -3,7 +3,7 @@
 
 ## About
 
-BREACH::HARBOR collector is a service that collects data from inbound attacks, logs them and sends them over to the BREACH::HARBOR Core API.
+BREACH::HARBOR Collector is a service that collects data from inbound attacks, logs them and sends them over to the BREACH::HARBOR Core API.
 
 The service can be ran autonomously for research and monitoring purposes without any connection to the separate Core API service.
 
