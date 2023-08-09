@@ -20,7 +20,7 @@ class TestHTTPService(unittest.TestCase):
         payload = self.service.create_payload(self.request, request_payload)
 
         self.assertIsNotNone(payload["happened_at"])
-        self.assertEqual(payload["ip_addr"], "127.0.0.1")
+        self.assertEqual(payload["ip_address"], "127.0.0.1")
         self.assertEqual(payload["incident_type"], "BH-HTTP")
         self.assertEqual(payload["metadata"]["user_agent"], "DummyAgent")
         self.assertEqual(payload["metadata"]["method"], "POST")

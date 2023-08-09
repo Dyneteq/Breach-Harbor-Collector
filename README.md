@@ -42,6 +42,7 @@ Copy .env.example to .env and setup the env variables:
 API_POST_URL=https://api.breachharbor.local
 API_TOKEN=jfxPSG2qugTvKIhWfXEv5t0kb0Stjh8ljDRhmA
 API_ENABLED=true
+COLLECTOR_ID=ABCDEF-123
 LOGGING_LEVEL=INFO
 LOGGING_ENABLED=false
 SERVICE_HTTP_ENABLED=true

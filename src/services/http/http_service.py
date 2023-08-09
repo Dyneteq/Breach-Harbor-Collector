@@ -67,7 +67,7 @@ class HTTPService:
             request_method, request_path, request_headers, request_payload
         )
         request_data = {
-            "ip_addr": client_ip,
+            "ip_address": client_ip,
             "incident_type": "BH-HTTP",
             "happened_at": timestamp,
             "metadata": {
