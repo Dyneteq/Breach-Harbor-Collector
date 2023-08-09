@@ -43,10 +43,13 @@ class Configuration:
             "API_POST_URL": env_vars.get("API_POST_URL"),
             "API_TOKEN": env_vars.get("API_TOKEN"),
             "API_ENABLED": env_vars.get("API_ENABLED") == "true",
+            "COLLECTOR_ID": env_vars.get("COLLECTOR_ID"),
             "LOGGING_LEVEL": env_vars.get("LOGGING_LEVEL"),
             "LOGGING_ENABLED": env_vars.get("LOGGING_ENABLED") == "true",
             "SERVICE_HTTP_ENABLED": env_vars.get("SERVICE_HTTP_ENABLED") == "true",
-            "SERVICE_SSH_ENABLED": env_vars.get("SERVICE_SSH_ENABLED") == "true"
+            "SERVICE_HTTP_PORT": env_vars.get("SERVICE_HTTP_PORT") == "8080",
+            "SERVICE_SSH_ENABLED": env_vars.get("SERVICE_SSH_ENABLED") == "true",
+            "SERVICE_SSH_PORT": env_vars.get("SERVICE_HTTP_PORT") == "2222",
         }
 
         try:
@@ -75,6 +78,11 @@ class Configuration:
     def validate_boolean(cls, value, key):
         if not isinstance(value, bool):
             raise ValueError(f"'{key}' should be a boolean.")
+        
+    @classmethod
+    def validate_string(cls, value, key):
+        if not isinstance(value, str):
+            raise ValueError(f"'{key}' should be a string.")
 
     @classmethod
     def validate_integer(cls, value, key):
@@ -86,7 +94,9 @@ class Configuration:
         cls.validate_api_post_url(config.get("API_POST_URL"))
         cls.validate_api_token(config.get("API_TOKEN"))
         cls.validate_boolean(config.get("API_ENABLED"), "API_ENABLED")
+        cls.validate_string(config.get("LOGGING_LEVEL"), "LOGGING_LEVEL")
         cls.validate_boolean(config.get("LOGGING_ENABLED"), "LOGGING_ENABLED")
+        cls.validate_string(config.get("COLLECTOR_ID"), "COLLECTOR_ID")
         cls.validate_boolean(config.get("SERVICE_HTTP_ENABLED"), "SERVICE_HTTP_ENABLED")
         cls.validate_boolean(config.get("SERVICE_SSH_ENABLED"), "SERVICE_SSH_ENABLED")
         cls.validate_integer(config.get("SERVICE_HTTP_PORT"), "SERVICE_HTTP_PORT")

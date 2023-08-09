@@ -42,7 +42,7 @@ class SSHServer(paramiko.ServerInterface):
     def create_payload(self, data):
         timestamp = datetime.datetime.now().isoformat()
         return {
-            "ip_addr": data["client_ip_addr"],
+            "ip_address": data["client_ip_addr"],
             "incident_type": "BH-SSH",
             "happened_at": timestamp,
             "metadata": {

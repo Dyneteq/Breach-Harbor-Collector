@@ -9,6 +9,7 @@ class TestConfiguration(unittest.TestCase):
             "API_POST_URL": "http://example.com/api",
             "API_TOKEN": "example_token",
             "API_ENABLED": True,
+            "COLLECTOR_ID": "ABCDEFGH-123",
             "LOGGING_LEVEL": "INFO",
             "LOGGING_ENABLED": True,
             "SERVICE_HTTP_ENABLED": True,

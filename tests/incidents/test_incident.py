@@ -13,7 +13,7 @@ class TestIncident(unittest.IsolatedAsyncioTestCase):
     async def test_incident_send_to_api(self, mock_post):
         # Mock the HTTP response from aiohttp.ClientSession.post
         mock_response = MagicMock()
-        mock_response.status = 200
+        mock_response.status = 201
         mock_response.json = make_mocked_coro(return_value={})
         mock_post.return_value.__aenter__.return_value = mock_response
 
@@ -29,7 +29,7 @@ class TestIncident(unittest.IsolatedAsyncioTestCase):
         # Ensure that aiohttp.ClientSession.post was called with the expected arguments
         mock_post.assert_called_once_with(
             url=config.get("API_POST_URL"),
-            params={"token": config.get("API_TOKEN")},
+            headers={"authorization": f"Bearer {config.get('API_TOKEN')}"},
             json=data,
         )
 
@@ -79,7 +79,7 @@ class TestIncident(unittest.IsolatedAsyncioTestCase):
 
     def get_data(self, metadata):
         return {
-            "ip_addr": "127.0.0.1",
+            "ip_address": "127.0.0.1",
             "incident_type": "BH-HTTP",
             "metadata": metadata,
             "happened_at": "2023-07-28T17:32:19.336395",
